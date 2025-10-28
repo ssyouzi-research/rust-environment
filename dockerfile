@@ -14,7 +14,6 @@ RUN apt update &&\
     echo 'export PATH=/usr/local/cargo/bin:$PATH' >> /home/vscode/.bashrc &&\
     pip install --no-cache-dir -r requirements.txt &&\
     curl -fsSL https://code-server.dev/install.sh | sh &&\
-    /usr/local/cargo/bin/cargo install evcxr_jupyter &&\
     python -m bash_kernel.install
 
 EXPOSE 8080
