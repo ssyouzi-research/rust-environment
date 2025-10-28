@@ -1,0 +1,11 @@
+services:
+  code-server:
+    image: ghcr.io/ssyouzi-research/rust-environment/rust-environment:main
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/home/vscode/workspace
+      - ./config:/home/vscode/.config
+      - ${HOME}${USERPROFILE}/.aws:/home/vscode/.aws
+    user: vscode
+    restart: unless-stopped
