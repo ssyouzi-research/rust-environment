@@ -8,7 +8,6 @@ ENV RUSTUP_HOME=/usr/local/rustup \
 COPY requirements.txt .
 RUN apt update &&\
     apt upgrade -y &&\
-    apt install sudo -y &&\
     apt install pandoc texlive-xetex texlive-fonts-recommended texlive-plain-generic texlive-lang-japanese -y &&\
     curl -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path &&\
     chown -R vscode:vscode /usr/local/rustup /usr/local/cargo &&\
